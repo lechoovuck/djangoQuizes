@@ -1,2 +1,4 @@
-# djangoQuizes
-Application for creating and taking quizes
+# H1 djangoQuizes
+Приложение для проведения тестов
+
+

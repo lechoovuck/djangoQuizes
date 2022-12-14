@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block scripts %}
+    <script defer src="{% static 'quizes/main.js' %}" ></script>
+{% endblock scripts %}
+
+{% block name %}
+    Домашняя страница
+{% endblock name %}
+
+{% block content %}
+    <h1>Список тестов</h1>
+
+    <hr>
+    <div class="modal fade" id="startQuizModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="startQuizModal">Подтверждение выбора</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body-confirm">
+                    {% comment %}  {% endcomment %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Назад</button>
+                    <button type="button" class="btn btn-primary" id="start-button">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for obj in object_list %}
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-outline-primary" 
+                data-pk="{{obj.pk}}" 
+                data-quiz="{{obj.name}}"
+                data-questions="{{obj.questions_amount}}"
+                data-time="{{obj.time}}"
+                data-score-to-pass="{{obj.score_to_pass}}"
+                data-bs-toggle="modal" 
+                data-bs-target="#startQuizModal">
+                {{obj.name}}
+            </button>
+            <br class="md">
+    </div>
+    {% endfor %}
+    <hr>    
+
+    <div class="sticky-sm-bottom d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-primary me-md-2" href="{% url 'logout' %}">Выход</a>
+    </div>    
+
+    <hr>
+
+{% endblock content %}

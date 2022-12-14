@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block name %}
+{{obj.name}}
+{% endblock name %}
+
+{% block content %}
+
+<form action="" method='POST'>
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="uname" class="form-label">Логин</label>
+      <input type="text" class="form-control" placeholder="Введите имя пользователя" name='uname' id="uname">
+    </div>
+    <div class="mb-3">
+      <label for="passw" class="form-label">Пароль</label>
+      <input type="password" class="form-control" id="passw" placeholder="Введите пароль" name='passw'>
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+    <a class="btn btn-primary" href="{% url 'register-page' %}" role="button">Регистрация</a>
+</form>
+
+
+{% endblock content %}

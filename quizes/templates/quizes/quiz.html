@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block scripts %}
+    <script defer src="{% static 'quizes/quiz.js' %}" ></script>
+{% endblock scripts %}
+
+{% block name %}
+{{obj.name}}
+{% endblock name %}
+
+{% block content %}
+
+
+
+    <div class="row">       
+        <div class="col">
+            <h2 class="m-1">{{obj.name}}</h2>
+        </div>
+        <div id="return-button" class="col text-end m-3">
+            <a class="btn btn-secondary me-md-2" href="{% url 'home-page' %}">Назад</a>
+        </div>
+    </div>
+
+    <div class="row">       
+        <div class="col">
+            <h6 class="m-1 text-body" id="timer-box"></h6>
+        </div>
+
+    </div>
+
+    <form id="quiz-form" class="mt-3 mb-3">
+        {% csrf_token %}
+        <div id="quiz-box">
+            
+        </div>
+        <hr>
+        <button class="btn btn-primary" type="submit" data-bs-toggle="collapse" data-bs-target="#result-box" aria-expanded="false" aria-controls="result-box">
+            Подтвердить
+        </button>
+    </form>
+
+    <div id="score-box"></div>
+
+    <div class="collapse m-3" id="result-box">
+        <div class="card card-body" id="result-box-card">
+        </div>
+    </div>
+
+
+{% endblock content %}

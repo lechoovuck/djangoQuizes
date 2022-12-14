@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block name %}
+{{obj.name}}
+{% endblock name %}
+
+{% block content %}
+
+<form action="" method='POST'>
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="fname" class="form-label">Имя</label>
+        <input type="text" class="form-control" placeholder="Введите имя" name='fname' id="fname">
+
+        <label for="lname" class="form-label">Фамилия</label>
+        <input type="text" class="form-control" placeholder="Введите фамилию" name='lname' id="lname">
+
+    </div>
+    <div class="mb-3">
+        <label for="uname" class="form-label">Логин</label>
+        <input type="text" class="form-control" placeholder="Введите имя пользователя" name='uname' id="uname">
+
+        <label for="email" class="form-label">Почта:</label>
+        <input type="email" class="form-control" placeholder="Введите вашу электронную почту" name='email' id="uname">
+
+        <label for="passw" class="form-label">Пароль</label>
+        <input type="password" class="form-control" id="passw" placeholder="Введите пароль" name='passw'>
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    <a class="btn btn-outline-primary" href="{% url 'login-page' %}" role="button">У меня уже есть аккаунт</a>
+</form>
+
+
+{% endblock content %}
