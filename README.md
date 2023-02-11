@@ -1,4 +1,3 @@
 # djangoQuizes
-Приложение для проведения тестов
-
+App for taking quizes
 
