@@ -9,25 +9,25 @@
 <form action="" method='POST'>
     {% csrf_token %}
     <div class="mb-3">
-        <label for="fname" class="form-label">Имя</label>
-        <input type="text" class="form-control" placeholder="Введите имя" name='fname' id="fname">
+        <label for="fname" class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name" name='fname' id="fname">
 
-        <label for="lname" class="form-label">Фамилия</label>
-        <input type="text" class="form-control" placeholder="Введите фамилию" name='lname' id="lname">
+        <label for="lname" class="form-label">Surname</label>
+        <input type="text" class="form-control" placeholder="Enter your surname" name='lname' id="lname">
 
     </div>
     <div class="mb-3">
-        <label for="uname" class="form-label">Логин</label>
-        <input type="text" class="form-control" placeholder="Введите имя пользователя" name='uname' id="uname">
+        <label for="uname" class="form-label">Login</label>
+        <input type="text" class="form-control" placeholder="Enter your login" name='uname' id="uname">
 
-        <label for="email" class="form-label">Почта:</label>
-        <input type="email" class="form-control" placeholder="Введите вашу электронную почту" name='email' id="uname">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" placeholder="Enter your email" name='email' id="uname">
 
-        <label for="passw" class="form-label">Пароль</label>
-        <input type="password" class="form-control" id="passw" placeholder="Введите пароль" name='passw'>
+        <label for="passw" class="form-label">Password</label>
+        <input type="password" class="form-control" id="passw" placeholder="Enter your password" name='passw'>
     </div>
-    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-    <a class="btn btn-outline-primary" href="{% url 'login-page' %}" role="button">У меня уже есть аккаунт</a>
+    <button type="submit" class="btn btn-primary">Register</button>
+    <a class="btn btn-outline-primary" href="{% url 'login-page' %}" role="button">I already have an account</a>
 </form>
 
 

@@ -13,12 +13,12 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=> {
                                                                         const time = modalBtn.getAttribute('data-time')
                                                                         const score_to_pass = modalBtn.getAttribute('data-score-to-pass')
                                                                         modalBody.innerHTML=`
-                                                                            <h5>Начать <b>${name}?</b></h5>
+                                                                            <h5>Start <b>${name}?</b></h5>
                                                                             <div class="text-muted">
                                                                                 <ul>
-                                                                                    <li>Количество вопросов: <i>${questions_amount}</i></li>
-                                                                                    <li>Отведенное время: <i>${time} мин</i></li>
-                                                                                    <li>Порог прохождения: <i>${score_to_pass}%</i></li>
+                                                                                    <li>Amount of questions: <i>${questions_amount}</i></li>
+                                                                                    <li>Time: <i>${time} min</i></li>
+                                                                                    <li>Score to pass: <i>${score_to_pass}%</i></li>
                                                                                 </ul>
                                                                             </div>
                                                                         `

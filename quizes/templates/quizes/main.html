@@ -7,26 +7,26 @@
 {% endblock scripts %}
 
 {% block name %}
-    Домашняя страница
+    Home
 {% endblock name %}
 
 {% block content %}
-    <h1>Список тестов</h1>
+    <h1>Quiz list</h1>
 
     <hr>
     <div class="modal fade" id="startQuizModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="startQuizModal">Подтверждение выбора</h1>
+                    <h1 class="modal-title fs-5" id="startQuizModal">Confirm your choice</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modal-body-confirm">
                     {% comment %}  {% endcomment %}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Назад</button>
-                    <button type="button" class="btn btn-primary" id="start-button">Да</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                    <button type="button" class="btn btn-primary" id="start-button">Submit</button>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
     <hr>    
 
     <div class="sticky-sm-bottom d-grid gap-2 d-md-flex justify-content-md-end">
-        <a class="btn btn-primary me-md-2" href="{% url 'logout' %}">Выход</a>
+        <a class="btn btn-primary me-md-2" href="{% url 'logout' %}">Exit</a>
     </div>    
 
     <hr>

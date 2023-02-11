@@ -8,7 +8,7 @@ const timer = (time)=>{
     let showSec
     let showMin
 
-    timerBox.innerHTML =`Осталось:<b> ${time}:00</b>`
+    timerBox.innerHTML =`Time left:<b> ${time}:00</b>`
 
 
     let min = time - 1
@@ -29,13 +29,13 @@ const timer = (time)=>{
         showMin = min
 
         if (min === 0 && sec === 0){
-            timerBox.innerHTML =`Осталось:<b> 0:00</b>`
+            timerBox.innerHTML =`Time left:<b> 0:00</b>`
             clearInterval(timer)
-            alert('Время вышло!')
+            alert('Time is up!')
             sendData()
         }
 
-        timerBox.innerHTML =`Осталось:<b>  ${showMin}:${showSec}</b>`
+        timerBox.innerHTML =`Time left:<b>  ${showMin}:${showSec}</b>`
 
     }, 1000)
 
@@ -102,7 +102,7 @@ const sendData = ()=> {
             console.log(results)
             quizForm.classList.add('not-visible')
 
-            scoreBox.innerHTML = `${response.пройден ? 'Поздравляем!' : 'Ой...'}Ваш результат: ${response.процент}%`
+            scoreBox.innerHTML = `${response.пройден ? 'Congrats!' : 'Oops...'}Your result: ${response.процент}%`
 
             results.forEach(res=>{
                 const resultsDiv = document.createElement("div")
@@ -115,19 +115,19 @@ const sendData = ()=> {
                     resultsDiv.classList.add(...divClass)
 
                     if (choice == 'пропущен') {
-                        resultsDiv.innerHTML += ' | пропущен'
+                        resultsDiv.innerHTML += ' | skipped'
                         resultsDiv.classList.add('bg-danger')
                     }
                     else{
                         const answer = choice['выбранный ответ']
                         const correct = choice['верный ответ']
-                        resultsDiv.innerHTML += ` | выбран: ${answer} `
+                        resultsDiv.innerHTML += ` | selected: ${answer} `
 
                         if (answer == correct){
                             resultsDiv.classList.add('bg-success')
                         }
                         else{
-                            resultsDiv.innerHTML += `| правильный ответ: ${correct} `
+                            resultsDiv.innerHTML += `| correct answer: ${correct} `
                             resultsDiv.classList.add('bg-danger')
                         }
                     }
